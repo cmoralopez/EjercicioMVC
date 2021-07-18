@@ -1,0 +1,63 @@
+﻿@model List<EjercicioMVC.Models.Persona>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Cedula
+                @*Html.DisplayNameFor(model => model.Cedula)*@
+            </th>
+            <th>
+                Nombre
+                @*Html.DisplayNameFor(model => model.Nombre)*@
+            </th>
+            <th>
+                Apellido
+                @*Html.DisplayNameFor(model => model.Apellido)*@
+            </th>
+            <th>
+                Direccion
+                @*Html.DisplayNameFor(model => model.Direccion)*@
+            </th>
+            <th>
+                Genero
+                @*Html.DisplayNameFor(model => model.Genero)*@
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cedula)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Apellido)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Direccion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Genero)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.Primary */})
+                @Html.ActionLink("Details", "Details", new { /* id=item.Primary */})
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.Primary */})
+            </td>
+        </tr>
+         }
+    </tbody>
+</table>
